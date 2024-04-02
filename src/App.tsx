@@ -1,5 +1,6 @@
+
+
 import React from 'react';
-import './css/app.css';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +11,7 @@ import { HomePage } from './app/screens/homePage';
 import { HomeNavbar } from './app/components/headers/HomeNavbar';
 import { OtherNavbar } from './app/components/headers/OtherNavbar';
 import { Footer } from './app/components/footer';
+import '../css/app.css';
 
 function App() {
   const location = useLocation();//bu biz qayerda turganimizni bildiradigan rooterdan oladi
