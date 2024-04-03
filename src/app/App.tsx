@@ -6,14 +6,20 @@ import { Button } from '@mui/base';
 import { ProductsPage } from './screens/productsPage';
 import { OrdersPage } from './screens/ordersPage';
 import { UserPage } from './screens/userPage';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, useLocation } from 'react-router-dom';
 import { HomePage } from './screens/homePage';
+import { HomeNavbar } from './components/headers/HomeNavbar';
+import { OtherNavbar } from './components/headers/OtherNavbar';
+import { Footer } from './components/footer';
 
 
 
 function App() {
+
+  const location = useLocation();/*buyerda biz qaysi pagesda turganimizni aniqlayapmiz*/
   return (
   <>
+    {location.pathname === "/" ? <HomeNavbar/> : <OtherNavbar/>}
 
     <Switch>
       <Route path="/products">
@@ -29,6 +35,7 @@ function App() {
         <HomePage />
       </Route>
     </Switch>
+    <Footer/>
     </>
 
   );
