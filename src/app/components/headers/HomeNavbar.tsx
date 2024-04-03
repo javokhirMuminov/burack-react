@@ -1,27 +1,19 @@
-import { Button } from "@mui/base";
-import { Box, Container, Stack } from "@mui/system";
+import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export function HomeNavbar () {
   const authMember = null;/* agar user other bolmasa degani*/
 
   return <div className="home-navbar">
-    <Container sx={{mt: "55px", height: "642px"}}>
-      <Stack sx={{height: "50px",}}
-       flexDirection={"row"}
-       justifyContent={"space-between"}
-       alignItems={"center"} >
+    <Container className="navbar-container">
+      <Stack className="menu" >
 
         <Box>
           <NavLink to="/">
-            <img  style={{width: "125px ", height: "30px"}} src="/icons/text-0.svg" />
+            <img  className="brand-logo" src="/icons/text-0.svg" />
           </NavLink>
          </Box>
-         <Stack flexDirection={"row"}
-         justifyContent={"space-between"}
-         minWidth={"700px"}
-         alignItems={"center"}
-         >
+         <Stack className="links">
           <Box className="hover-line">
             <NavLink to="/" activeClassName={"underline"}>Home</NavLink>
          </Box>
@@ -47,13 +39,13 @@ export function HomeNavbar () {
 
          {!authMember ? (
           <Box>
-            <Button /*variant="contained"*/
-            style={{background: "3776CC",
-             color: '#f8f8ff'}}
-             >Login</Button>
+            <Button className="login-button">Login</Button>
           </Box>
           ) : (
-            <img/>
+            <img className="user-avatar"
+              src={"/icons/defoult-img.svg"}
+              aria-haspopup={"true"}
+            />
           ) }
          </Stack>
       </Stack>
