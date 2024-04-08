@@ -39,7 +39,7 @@ export function HomeNavbar () {
 
          {!authMember ? (
           <Box>
-            <Button className="login-button">Login</Button>
+            <Button variant="contained" className="login-button">Login</Button>
           </Box>
           ) : (
             <img className="user-avatar"
@@ -49,7 +49,26 @@ export function HomeNavbar () {
           ) }
          </Stack>
       </Stack>
-      <Stack>DITAIL</Stack>
+      <Stack className={"header-frame"}>
+        <Stack className={"detail"}>
+          <Box className={"head-main-text"}>World's Most Delicious Cousine</Box>
+          <Box className={"wel-txt"}>The Choice, not just a choice</Box>
+          <Box className={"service-txt"}>24 hours service</Box>
+          <Box className={"sugnup"}>
+            {!authMember ? (
+              <Button variant="contained"
+                className={"sugnup-botton"}
+              >SIGN UP</Button>
+            ) : null}
+          </Box>
+
+        </Stack>
+        <Box className={"logo-frame"}>
+          <div className="logo-img"></div>
+        </Box>
+
+
+      </Stack>
     </Container>
   </div>
 
