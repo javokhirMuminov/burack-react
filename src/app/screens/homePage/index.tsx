@@ -1,5 +1,5 @@
 import { Container } from "@mui/system";
 
-export function HomePage () {
+export default function HomePage () {
   return <Container>Home</Container>
 }

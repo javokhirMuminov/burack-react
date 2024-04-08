@@ -1,6 +1,6 @@
 import { Container } from "@mui/system";
 import React from "react";
 
-export function UserPage () {
+export default function UserPage () {
   return <Container>UsersPage</Container>
 }
