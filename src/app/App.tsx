@@ -3,7 +3,7 @@ import { Box, Container, Stack } from '@mui/system';
 import { Link,  Typography } from '@mui/material';
 import { Button } from '@mui/base';
 import  ProductsPage  from './screens/productsPage';
-import { OrdersPage } from './screens/ordersPage';
+import  OrdersPage  from './screens/ordersPage';
 import  UserPage  from './screens/userPage';
 import { Route, BrowserRouter as Router, Switch, useLocation } from 'react-router-dom';
 import  HomePage  from './screens/homePage';
@@ -13,7 +13,7 @@ import  Footer  from './components/footer';
 import '../css/app.css';
 import "../css/footer.css";
 import "../css/navbar.css";
-import { HelpPage } from './screens/helpPage';
+import  HelpPage  from './screens/helpPage';
 
 
 function App() {
