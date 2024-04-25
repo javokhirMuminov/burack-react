@@ -7,6 +7,7 @@ import PopularDishes from "./PopularDisshes";
 import Statistics from "./Statistics";
 import "../../../css/home.css";
 
+
 export default function HomePage() {
   //Selector: Storte => Data
 
