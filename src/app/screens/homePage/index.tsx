@@ -26,6 +26,7 @@ const popularDishesRetriver = createSelector(
 export default function HomePage() {
   //Selector: Storte => Data
   const { setPopularDishes} = actionDispatch(useDispatch());
+  const{ popularDishes } = useSelector(popularDishesRetriver);
 
   useEffect(() => {
     //Baxkend server data request => Data
@@ -35,7 +36,7 @@ export default function HomePage() {
   }, []);
 
 
- 
+
 
   return <div className="homepage">
   <Statistics />
