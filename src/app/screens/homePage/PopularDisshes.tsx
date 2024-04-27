@@ -12,7 +12,7 @@ import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 
 import {  useSelector } from "react-redux";
 import {createSelector} from "reselect";
-import {retrivePopularDishes } from "./selector";
+import {retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
@@ -20,7 +20,7 @@ import { serverApi } from "../../../lib/config";
 
 
   const popularDishesRetriver = createSelector(
-    retrivePopularDishes,
+    retrievePopularDishes,
     (popularDishes) => ({ popularDishes})
   );
 

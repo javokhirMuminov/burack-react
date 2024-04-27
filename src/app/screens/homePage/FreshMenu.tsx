@@ -10,7 +10,7 @@ import Divider from "../../components/divider";
 
 import {  useSelector } from "react-redux";
 import {createSelector} from "reselect";
-import {retriveNewDishes, retrivePopularDishes } from "./selector";
+import {retrieveNewDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
@@ -18,7 +18,7 @@ import { serverApi } from "../../../lib/config";
 
 /**REDUX SLICE $ SELECTOR */
   const setNewDishesRetriver = createSelector(
-    retriveNewDishes,
+    retrieveNewDishes,
     (newDishes) => ({ newDishes})
   );
 
