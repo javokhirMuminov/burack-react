@@ -13,6 +13,24 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { setProducts } from "./slice";
+import { createSelector } from "@reduxjs/toolkit";
+import { retriveProducts} from "./selector"
+import { Product  } from "../../../lib/types/product";
+
+
+/**REDUX SLICE & SELECTOR */
+const actionDispatch =(dispatch: Dispatch) => ({
+    setProducts: (data: Product[]) => dispatch(setProducts(data)),
+});
+
+const productsRetriver = createSelector(retriveProducts, (products) => ({
+    products
+}) );
+
+
 const products = [
     { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
     { productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },

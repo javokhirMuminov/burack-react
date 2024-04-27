@@ -4,6 +4,9 @@ import { Product, ProductInquiry } from "../../lib/types/product";
 
 
 class ProductService {
+  detailProduct(productId: string) {
+    throw new Error("Method not implemented.");
+  }
   private readonly path: string;
 
   constructor() {
