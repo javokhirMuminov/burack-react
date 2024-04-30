@@ -33,8 +33,7 @@ interface ProductsProps {
   onAdd: (item: CartItem) => void;
 }
 
-export default function Products(props: ProductsProps) {
-  const { onAdd } = props;
+export default function Products() {
   const { setProducts } = actionDispatch(useDispatch());
   const { products } = useSelector(productsRetriever);
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
@@ -233,16 +232,16 @@ export default function Products(props: ProductsProps) {
                         <div className="prodct-sale">{sizeVolume}</div>
                         <Button
                           className="shop-btn"
-                          onClick={(e) => {
-                            onAdd({
-                              _id: product._id,
-                              quantity: 1,
-                              name: product.productName,
-                              price: product.productPrice,
-                              image: product.productImages[0],
-                            });
-                            e.stopPropagation();
-                          }}
+                        //   onClick={(e) => {
+                        //     onAdd({
+                        //       _id: product._id,
+                        //       quantity: 1,
+                        //       name: product.productName,
+                        //       price: product.productPrice,
+                        //       image: product.productImages[0],
+                        //     });
+                        //     e.stopPropagation();
+                        //   }}
                         >
                           <img src={"/icons/shopping-cart.svg"} alt="" />
                         </Button>
