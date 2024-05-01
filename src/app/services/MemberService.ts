@@ -4,9 +4,7 @@ import { LoginInput, Member, MemberInput } from "../../lib/types/member";
 
 class MemberService {
 
-  login(loginInput: LoginInput) {
-    throw new Error("Method not implemented.");
-  }
+
   private readonly path: string;
 
   constructor() {
@@ -50,7 +48,26 @@ class MemberService {
       console.log("Error signup ! ", err);
       throw err;
     }
-  }
+  };
+
+
+
+  public async login(input: LoginInput): Promise<Member>  {
+    try {
+      const url = this.path + "/member/login";
+      const result = await axios.post(url, input, {withCredentials: true});
+      console.log(result);
+
+      const member: Member = result.data.member;
+      localStorage.setItem("memberData", JSON.stringify(member));
+      return member;
+    }catch (err) {
+      console.log("Error login ! ", err);
+      throw err;
+    }
+  };
+
+
 
 }
 export default MemberService;
