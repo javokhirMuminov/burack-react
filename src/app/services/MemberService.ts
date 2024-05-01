@@ -3,9 +3,7 @@ import { serverApi } from "../../lib/config";
 import { LoginInput, Member, MemberInput } from "../../lib/types/member";
 
 class MemberService {
-  signup(signupInput: MemberInput) {
-    throw new Error("Method not implemented.");
-  }
+
   login(loginInput: LoginInput) {
     throw new Error("Method not implemented.");
   }
@@ -38,6 +36,21 @@ class MemberService {
     }
   }
 
+
+  public async signup(input: MemberInput): Promise<Member>  {
+    try {
+      const url = this.path + "/member/signup";
+      const result = await axios.post(url, input, {withCredentials: true});
+      console.log(result);
+
+      const member: Member = result.data.member;
+      localStorage.setItem("memberData", JSON.stringify(member));
+      return member;
+    }catch (err) {
+      console.log("Error signup ! ", err);
+      throw err;
+    }
+  }
 
 }
 export default MemberService;

@@ -13,11 +13,13 @@ interface HomeNavbarProps {
     onRemove: (item: CartItem) => void;
     onDelete: (item: CartItem) => void;
     onDeleteAll: () => void;
+    setSignupOpen: (isOpen: boolean) => void;
+    setLoginOpen: (isOpen: boolean) => void;
 }
 
 
 export default function HomeNavbar(props: HomeNavbarProps) {
-    const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
+    const { cartItems, onAdd, onRemove, onDelete, onDeleteAll, setSignupOpen, setLoginOpen } = props;
     const authMember = null;
     return (
         <div className="home-navbar">
@@ -58,7 +60,9 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                         {!authMember ? (
                             <Box>
                                 <Button variant="contained"
-                                    className="login-button" >Login</Button>
+                                    className="login-button"
+                                    onClick={() => setLoginOpen(true)}
+                                    >Login</Button>
                             </Box>) : (
                             <img className="user-avatar"
                                 src={"/icons/default-user.svg"} alt="" aria-haspopup={"true"}
@@ -72,7 +76,9 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                         <Box className="first-text">The Choice, not just a choice</Box>
                         <Box className="second-text">24 hours service</Box>
                         <Box className="signup">
-                            {!authMember ? (<Button variant={"contained"} className={"signup-button"}>SIGN UP</Button>) : null}
+                            {!authMember ? (<Button variant={"contained"} className={"signup-button"}
+                            onClick={() => setSignupOpen(true)}
+                            >SIGN UP</Button>) : null}
                         </Box>
                     </Stack>
                     <Box className={"logo-frame"}>
