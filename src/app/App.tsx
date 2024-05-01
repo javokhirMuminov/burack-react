@@ -16,6 +16,7 @@ import "../css/navbar.css";
 import  HelpPage  from './screens/helpPage';
 import { CartItem } from '../lib/types/search';
 import useBasket from './hooks/useBasket';
+import AuthenticationModal from './components/auth';
 
 
 function App() {
@@ -26,6 +27,14 @@ function App() {
     onRemove,
     onDelete,
     onDeleteAll} = useBasket();
+
+    const  [signupOpen, setSignupOpen] = useState<boolean>(false);
+    const [loginOpen, setLoginOpen] = useState<boolean>(false);
+
+
+    /**HANDLERS */
+    const handleSignupClose = () => setSignupOpen(false);
+    const handleLoginClose = () => setLoginOpen(false);
 
   return (
   <>
@@ -63,6 +72,14 @@ function App() {
       </Route>
     </Switch>
     <Footer/>
+
+
+    <AuthenticationModal
+    signupOpen={signupOpen}
+    loginOpen ={loginOpen}
+    handleLoginClose={handleLoginClose}
+    handleSignupClose={handleSignupClose}
+    />
     </>
 
   );

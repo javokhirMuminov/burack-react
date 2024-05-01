@@ -3,6 +3,12 @@ import { serverApi } from "../../lib/config";
 import { LoginInput, Member, MemberInput } from "../../lib/types/member";
 
 class MemberService {
+  signup(signupInput: MemberInput) {
+    throw new Error("Method not implemented.");
+  }
+  login(loginInput: LoginInput) {
+    throw new Error("Method not implemented.");
+  }
   private readonly path: string;
 
   constructor() {
@@ -32,6 +38,6 @@ class MemberService {
     }
   }
 
- 
+
 }
 export default MemberService;
