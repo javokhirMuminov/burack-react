@@ -1,16 +1,22 @@
 import { OrderStatus } from "../enums/order.enum";
 import { Product } from "./product";
 
+export interface OrderItemInput {
+  itemQuantity: number;
+  itemPrice: number;
+  productId: string;
+  orderId?: string;
+}
+
 export interface OrderItem {
   _id: string;
   itemQuantity: number;
   itemPrice: number;
-  orderId: string;
+  orderId?: string;
   productId: string;
   createdAt: Date;
   updateAt: Date;
 }
-
 export interface Order {
   _id: string;
   orderTotal: number;
@@ -19,25 +25,15 @@ export interface Order {
   memberId: string;
   createdAt: Date;
   updateAt: Date;
-
-  /**from aggregations */
+  /* from agrigations */
   orderItems: OrderItem[];
-  productData:Product[];
+  productData: Product[];
 }
-
-export interface OrderItemInput {
-  itemQuantity: number;
-  itemPrice: number;
-  productId: string;
-  orderId?: string;
-}
-
 
 export interface OrderInquiry {
   page: number;
-  limit:number;
+  limit: number;
   orderStatus: OrderStatus;
-
 }
 
 export interface OrderUpdateInput {
